@@ -1,1 +1,1 @@
-web: pwd && ls &&  && gunicorn EagleVision.wsgi
+web: pwd && ls && gunicorn EagleVision.wsgi

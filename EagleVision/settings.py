@@ -27,9 +27,9 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, "webappexample", "templates")
 SECRET_KEY = 'django-insecure-qn7vv&x^0==rk%avk^qny2u8mb+sgzs^7p#ap(!2bsu^aajoby'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['sweagles.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 
 ENV_FILE = find_dotenv()
@@ -79,7 +79,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'users.middleware.SystemStateMiddleware'
+    'users.middleware.SystemStateMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware"
 ]
 
 ROOT_URLCONF = 'EagleVision.urls'
@@ -150,9 +151,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

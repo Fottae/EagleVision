@@ -1,1 +1,1 @@
-web: pwd && ls && cd ./EagleVision && pwd && ls && gunicorn YourProjectName.wsgi
+web: pwd && ls &&  && gunicorn EagleVision.wsgi
